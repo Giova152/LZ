@@ -1,0 +1,1044 @@
+{
+  "site": {
+    "title": "Lynette Zoumenou",
+    "creditName": "Giovanny Gandonou",
+    "creditEmail": "midogiova@gmail.com",
+    "design": {
+      "accent": "#b8914d"
+    },
+    "tabs": {
+      "profil": "Profil",
+      "services": "Services",
+      "boutique": "Boutique"
+    }
+  },
+  "profile": {
+    "name": "Mme Lynette Zoumenou",
+    "tagline": "Santé · Beauté · Bien-être",
+    "avatar": "/img/pt.png",
+    "intro": "Passionnée par la santé, la beauté et le bien-être, j'accompagne les femmes à prendre soin d'elles — de l'intérieur comme de l'extérieur. Auteure, coach et conférencière, je partage mes méthodes pour vivre mieux au quotidien.",
+    "stats": [
+      {
+        "value": "12+",
+        "label": "Ans d'expérience"
+      },
+      {
+        "value": "2k+",
+        "label": "Clients satisfaits"
+      },
+      {
+        "value": "9",
+        "label": "Programmes"
+      }
+    ],
+    "expertise": [
+      "Soins naturels",
+      "Bien-être féminin",
+      "Coaching",
+      "Formation & Ebooks",
+      "Entrepreneuriat",
+      "Programmes"
+    ],
+    "socials": [
+      {
+        "type": "facebook",
+        "label": "Facebook",
+        "url": "https://www.facebook.com/NettyyZoum"
+      },
+      {
+        "type": "whatsapp",
+        "label": "WhatsApp",
+        "url": "https://wa.me/"
+      },
+      {
+        "type": "tiktok",
+        "label": "TikTok",
+        "url": "https://www.tiktok.com/@user9298819554178"
+      },
+      {
+        "type": "email",
+        "label": "Email",
+        "url": "mailto:contact@lynettezoumenou.com"
+      }
+    ]
+  },
+  "services": [
+    {
+      "label": "Réserver un rdv gratuit",
+      "icon": "calendar",
+      "items": [
+        {
+          "label": "Appel découverte (30 min)",
+          "sub": "Gratuit · Confidentiel · Sans engagement",
+          "url": "/appel-decouverte.html",
+          "image": "/img/covers/svc-appel-decouverte-30-min.svg"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "label": "Coaching",
+      "icon": "users",
+      "items": [
+        {
+          "label": "Renaissance personnelle",
+          "sub": "Coaching individuel · Transformation",
+          "url": "/coaching-individuel.html",
+          "image": "/img/covers/svc-renaissance-personnelle.svg"
+        },
+        {
+          "label": "Coaching de groupe",
+          "sub": "Sessions collectives · Communauté",
+          "url": "/coaching-de-groupe.html",
+          "image": "/img/covers/svc-coaching-de-groupe.svg"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "label": "Programmes",
+      "icon": "layers",
+      "items": [
+        {
+          "label": "Reprendre sa place",
+          "sub": "Un espace doux et transformateur pour les femmes qui veulent se retrouver, se reconstruire et avancer autrement.",
+          "url": "/programme/programme1.html",
+          "image": "/img/covers/svc-reprendre-sa-place.svg"
+        },
+        {
+          "label": "Femmes & Renaissance",
+          "sub": "Une parenthèse de douceur pour les femmes qui veulent se reconnecter à elles-mêmes.",
+          "url": "/programme/programme2.html",
+          "image": "/img/covers/svc-femmes-renaissance.svg"
+        },
+        {
+          "label": "Oser entreprendre autrement",
+          "sub": "Pour les femmes qui veulent créer, structurer ou développer leur activité avec confiance — à leur rythme.",
+          "url": "/programme/programme3.html",
+          "image": "/img/covers/svc-oser-entreprendre-autrement.svg"
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "label": "Formation",
+      "icon": "book",
+      "items": [
+        {
+          "label": "Expertise Bien-être",
+          "sub": "Formation certifiante · Apprendre les bases",
+          "url": "/formation.html",
+          "image": "/img/covers/svc-expertise-bien-etre.svg"
+        }
+      ],
+      "enabled": true
+    }
+  ],
+  "shop": {
+    "digitalTitle": "Produits digitaux",
+    "digitalSub": "E-books gratuits & payants · Téléchargement immédiat",
+    "ebooks": [
+      {
+        "title": "Soins de pieds",
+        "type": "free",
+        "price": "Gratuit",
+        "image": "/img/covers/eb-soins-de-pieds.svg",
+        "url": "https://zoumcosmo.systeme.io/ebook",
+        "popup": ""
+      },
+      {
+        "title": "5 étapes pour ouvrir une garderie rentable",
+        "type": "paid",
+        "price": "10 $",
+        "image": "/img/covers/eb-5-etapes-pour-ouvrir-une-garderie-rentable.svg",
+        "url": "https://www.investirencpe.com/checkout",
+        "popup": ""
+      },
+      {
+        "title": "Conte pour enfant",
+        "type": "free",
+        "price": "Gratuit",
+        "image": "/img/covers/eb-conte-pour-enfant.svg",
+        "url": "",
+        "popup": "conte"
+      },
+      {
+        "title": "Ebook payant 2",
+        "type": "paid",
+        "price": "15 $",
+        "image": "/img/covers/eb-ebook-payant-2.svg",
+        "url": "",
+        "popup": ""
+      },
+      {
+        "title": "Ebook gratuit 3",
+        "type": "free",
+        "price": "Gratuit",
+        "image": "/img/covers/eb-ebook-gratuit-3.svg",
+        "url": "",
+        "popup": ""
+      },
+      {
+        "title": "Ebook payant 3",
+        "type": "paid",
+        "price": "20 $",
+        "image": "/img/covers/eb-ebook-payant-3.svg",
+        "url": "",
+        "popup": ""
+      },
+      {
+        "title": "Ebook gratuit 4",
+        "type": "free",
+        "price": "Gratuit",
+        "image": "/img/covers/eb-ebook-gratuit-4.svg",
+        "url": "",
+        "popup": ""
+      },
+      {
+        "title": "Ebook payant 4",
+        "type": "paid",
+        "price": "12 $",
+        "image": "/img/covers/eb-ebook-payant-4.svg",
+        "url": "",
+        "popup": ""
+      },
+      {
+        "title": "Ebook gratuit 5",
+        "type": "free",
+        "price": "Gratuit",
+        "image": "/img/covers/eb-ebook-gratuit-5.svg",
+        "url": "",
+        "popup": ""
+      },
+      {
+        "title": "Ebook payant 5",
+        "type": "paid",
+        "price": "8 $",
+        "image": "/img/covers/eb-ebook-payant-5.svg",
+        "url": "",
+        "popup": ""
+      },
+      {
+        "title": "Ebook gratuit 6",
+        "type": "free",
+        "price": "Gratuit",
+        "image": "/img/covers/eb-ebook-gratuit-6.svg",
+        "url": "",
+        "popup": ""
+      },
+      {
+        "title": "Ebook gratuit 7",
+        "type": "free",
+        "price": "Gratuit",
+        "image": "/img/covers/eb-ebook-gratuit-7.svg",
+        "url": "",
+        "popup": ""
+      }
+    ],
+    "ebookCta": {
+      "label": "Voir tous les e-books",
+      "url": "https://zoumcosmo.systeme.io/ebook"
+    },
+    "physicalTitle": "Produits physiques",
+    "physicalSub": "Les produits cosméceutiques",
+    "products": [
+      {
+        "title": "Savon Menthe Poivrée",
+        "price": "12 $",
+        "tag": "Nouveau",
+        "image": "/img/covers/prod-savon-menthe-poivree.svg",
+        "url": "https://biocosmeceutiques.com/produit/savon_menthe-poivree/"
+      },
+      {
+        "title": "Produit 2",
+        "price": "40 $",
+        "tag": "",
+        "image": "/img/covers/prod-produit-2.svg",
+        "url": ""
+      },
+      {
+        "title": "Produit 3",
+        "price": "18 $",
+        "tag": "",
+        "image": "/img/covers/prod-produit-3.svg",
+        "url": ""
+      }
+    ],
+    "productCta": {
+      "label": "Visiter la boutique",
+      "url": "https://biocosmeceutiques.com/"
+    }
+  },
+  "popups": [
+    {
+      "id": "conte",
+      "emoji": "📖",
+      "title": "Attends, ne pars pas",
+      "titleAccent": "les mains vides.",
+      "badge": "Conte pour enfant — Guide gratuit",
+      "sub": "Reçois le guide gratuit directement dans ta boîte mail.",
+      "action": "https://systeme.io/embedded/39125526/subscription",
+      "fields": [
+        {
+          "name": "first_name",
+          "placeholder": "Ton prénom"
+        },
+        {
+          "name": "email",
+          "placeholder": "ton@email.com"
+        }
+      ],
+      "button": "Recevoir le guide gratuit",
+      "note": "Pas de spam · Désabonnement en 1 clic"
+    }
+  ],
+  "pages": {
+    "appel-decouverte": {
+      "badge": "Accompagnement",
+      "title": "Appel découverte",
+      "em": "(30 min)",
+      "price": "",
+      "sub": "Cet appel est un échange gratuit et sans engagement pour faire le point sur ta situation actuelle. C'est un moment pour parler de ce que tu vis, clarifier tes besoins et identifier ce qui peut t'aider à avancer avec plus de clarté et de sérénité.",
+      "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800&h=400",
+      "quote": "",
+      "tags": [],
+      "cta": {
+        "label": "Réserver mon créneau sur Calendly",
+        "url": "https://calendly.com/zoumlegacy/30min",
+        "target": "_blank",
+        "note": "Échange confidentiel · Sans engagement",
+        "popup": ""
+      },
+      "sections": [
+        {
+          "type": "list",
+          "icon": "sparkle",
+          "title": "Ensemble, nous allons :",
+          "check": "accent",
+          "items": [
+            "Comprendre ta situation actuelle",
+            "Identifier tes blocages et tes besoins",
+            "Voir si un accompagnement avec moi est adapté pour toi",
+            "Définir une prochaine étape claire"
+          ]
+        },
+        {
+          "type": "quote",
+          "icon": "quote",
+          "title": "À savoir",
+          "text": "Cet appel n'est pas une séance de rencontre en douceur, mais un premier pas pour t'orienter et t'aider à y voir plus clair."
+        }
+      ],
+      "cloture": {
+        "emoji": "🌿",
+        "text": "Un premier pas, sans engagement, pour y voir plus clair."
+      }
+    },
+    "coaching-individuel": {
+      "badge": "Accompagnement individuel",
+      "title": "Renaissance",
+      "em": "personnelle",
+      "price": "",
+      "sub": "Accompagnement transformationnel et coaching de vie",
+      "image": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800&h=400",
+      "quote": "Tu traverses une période difficile ? Tu as vécu une séparation, une épreuve, un deuil professionnel ou un grand changement de vie et tu sens que tu n'es plus la même personne ? Cet accompagnement est là pour toi.",
+      "tags": [],
+      "cta": {
+        "label": "Réserver ma séance",
+        "url": "",
+        "target": "",
+        "note": "Échanges privés et confidentiels",
+        "popup": "offres"
+      },
+      "offers": [
+        {
+          "name": "Formule ESSENTIELLE",
+          "desc": "« Premier pas vers ta renaissance » : 3 séances (60 min) pour clarifier ta situation et débuter ta reconstruction.",
+          "price": "185 $",
+          "url": "https://buy.stripe.com/7sY5kEdlRaBCfT2bGe5Vu00"
+        },
+        {
+          "name": "Formule TRANSFORMATION",
+          "desc": "« Reprendre ta vie en main » : 6 séances pour un travail en profondeur et reconstruire ta confiance.",
+          "price": "325 $",
+          "url": "https://buy.stripe.com/7sY5kEdlRaBCfT2bGe5Vu00"
+        },
+        {
+          "name": "Formule PREMIUM",
+          "desc": "« Renaissance complète » : 10 séances intensives pour une métamorphose profonde et durable.",
+          "price": "550 $",
+          "url": "https://buy.stripe.com/6oU7sM81x112eOY5hQ5Vu02"
+        }
+      ],
+      "sections": [
+        {
+          "type": "list",
+          "icon": "sparkle",
+          "title": "Ce que tu vas vivre",
+          "check": "accent",
+          "items": [
+            "Faire le bilan de ton parcours de vie",
+            "Te reconnecter à toi-même et à tes besoins réels",
+            "Retrouver ta confiance et ton estime personnelle",
+            "Développer une vision positive de ton avenir",
+            "Reprendre ton pouvoir personnel",
+            "Construire un nouveau projet de vie aligné avec qui tu es aujourd'hui"
+          ]
+        },
+        {
+          "type": "list",
+          "icon": "heart",
+          "title": "Ce que tu vas obtenir",
+          "check": "rose",
+          "items": [
+            "Te sentir plus sereine et apaisée",
+            "Avoir une vision plus claire de ta vie",
+            "Retrouver espoir et motivation",
+            "Te sentir reconnectée à ta force intérieure",
+            "Être prête à avancer dans un nouveau chapitre de ta vie"
+          ]
+        },
+        {
+          "type": "list",
+          "icon": "users",
+          "title": "Comment je t'accompagne",
+          "check": "accent",
+          "items": [
+            "Des rencontres individuelles (en ligne ou en présentiel)",
+            "Un espace d'écoute, de soutien et de transformation",
+            "Des outils simples et adaptés à ta situation",
+            "Des échanges pour t'aider à clarifier tes pensées et tes choix",
+            "Un accompagnement humain, bienveillant et structuré"
+          ]
+        },
+        {
+          "type": "pourqui",
+          "icon": "users",
+          "title": "Pour qui est cet accompagnement ?",
+          "label": "Tu te reconnais dans l'une de ces situations :",
+          "items": [
+            "Tu traverses une période de changement ou de transition",
+            "Tu veux te reconstruire après une épreuve",
+            "Tu veux retrouver ton équilibre intérieur",
+            "Tu veux redonner du sens à ta vie",
+            "Tu es prête à te choisir et avancer autrement"
+          ]
+        }
+      ],
+      "cloture": {
+        "emoji": "🌸",
+        "text": "Renaissance personnelle, c'est plus qu'un accompagnement. C'est un espace pour te retrouver, te reconstruire et te redéfinir.\n\nTu n'as pas à traverser cette étape seule. Tu peux être accompagnée avec douceur, clarté et respect de ton rythme."
+      }
+    },
+    "programme1": {
+      "badge": "Accompagnement de groupe",
+      "title": "Reprendre",
+      "em": "sa place",
+      "price": "65 $",
+      "sub": "Un espace doux et transformateur pour les femmes qui veulent se retrouver, se reconstruire et avancer autrement.",
+      "image": "https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&q=80&w=800&h=400",
+      "quote": "De nombreuses femmes cheminent avec abnégation, portant avec dignité le poids de multiples responsabilités. Ce programme est une invitation à honorer votre propre existence et à restaurer votre équilibre intérieur.",
+      "tags": [],
+      "cta": {
+        "label": "Réserver mon accompagnement",
+        "url": "https://wa.me/",
+        "target": "_blank",
+        "note": "Échanges privés et confidentiels",
+        "popup": ""
+      },
+      "sections": [
+        {
+          "type": "list",
+          "icon": "sparkle",
+          "title": "Ce que ce programme t'offre",
+          "check": "soft",
+          "items": [
+            "Te reconnecter à toi-même",
+            "Retrouver ta confiance",
+            "Reprendre ton pouvoir intérieur",
+            "Avancer avec plus de clarté et de paix"
+          ]
+        },
+        {
+          "type": "list",
+          "icon": "heart",
+          "title": "Ce que tu vas vivre",
+          "check": "accent",
+          "items": [
+            "Des échanges profonds et authentiques",
+            "Des exercices de réflexion personnelle",
+            "Des moments de prise de conscience",
+            "Des instants d'écoute et de partage",
+            "Des outils simples pour retrouver l'équilibre émotionnel",
+            "Un espace sans jugement ni pression"
+          ]
+        },
+        {
+          "type": "tags",
+          "icon": "layers",
+          "title": "Quelques thèmes abordés",
+          "items": [
+            "Retrouver son identité",
+            "Se choisir sans culpabilité",
+            "Sortir de l'épuisement émotionnel",
+            "Reprendre confiance en soi",
+            "Comprendre ses blocages",
+            "Se reconnecter à sa valeur",
+            "Avancer à son rythme",
+            "Créer une vie plus alignée"
+          ]
+        },
+        {
+          "type": "format",
+          "icon": "calendar",
+          "title": "Format du programme",
+          "boxes": [
+            {
+              "value": "6",
+              "label": "Semaines"
+            },
+            {
+              "value": "1/sem.",
+              "label": "Rencontre de groupe"
+            }
+          ],
+          "note": "Rencontres en <strong>Zoom ou en présentiel</strong>, selon les participantes.",
+          "inclus": [
+            "Accompagnement de groupe bienveillant",
+            "Exercices de réflexion & fiches de travail",
+            "Journal de bord personnel",
+            "Espace d'échange privé (WhatsApp ou Messenger)",
+            "Soutien bienveillant tout au long du parcours"
+          ],
+          "addons": null
+        },
+        {
+          "type": "pourqui",
+          "icon": "users",
+          "title": "Ce programme est fait pour toi si…",
+          "label": "Tu te reconnais dans l'une de ces situations :",
+          "items": [
+            "Tu traverses une période de transition dans ta vie",
+            "Tu te sens perdue ou émotionnellement épuisée",
+            "Tu veux retrouver ta lumière intérieure",
+            "Tu as besoin d'un espace humain, vrai et sans masques",
+            "Tu veux évoluer en douceur, sans pression"
+          ]
+        },
+        {
+          "type": "dark",
+          "icon": "shield",
+          "title": "L'intention de ce programme",
+          "intro": "Ce n'est pas un espace de performance. Ce n'est pas un endroit où il faut « être forte ».",
+          "label": "C'est un espace pour…",
+          "items": [
+            "Déposer ce qui pèse, sans retenue",
+            "Se reconnecter à soi en toute douceur",
+            "Reprendre confiance pas à pas",
+            "Avancer avec plus de sérénité"
+          ]
+        }
+      ],
+      "cloture": {
+        "emoji": "🌸",
+        "text": "Parce qu'il arrive un moment dans la vie où une femme ne veut plus seulement survivre…\n\n<em>elle veut enfin reprendre sa place.</em>"
+      }
+    },
+    "programme2": {
+      "badge": "Accompagnement de groupe",
+      "title": "Femmes",
+      "em": "& Renaissance",
+      "price": "65 $",
+      "sub": "Une parenthèse de douceur pour les femmes qui veulent se reconnecter à elles-mêmes.",
+      "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&q=80&w=800&h=400",
+      "quote": "Dans le tumulte de la vie, se choisir est un luxe nécessaire. Offre-toi cette nouvelle naissance, plus consciente et plus sereine.",
+      "tags": [
+        "Bien-être",
+        "Féminité",
+        "Soins naturels",
+        "Reconnexion",
+        "Douceur"
+      ],
+      "cta": {
+        "label": "Initier ma renaissance",
+        "url": "https://wa.me/",
+        "target": "_blank",
+        "note": "Un accompagnement d'exception",
+        "popup": ""
+      },
+      "sections": [
+        {
+          "type": "tags",
+          "icon": "heart",
+          "title": "Une expérience humaine & apaisante",
+          "intro": "Ce programme mélange avec harmonie :",
+          "items": [
+            "Bien-être émotionnel",
+            "Développement personnel",
+            "Féminité",
+            "Soins naturels",
+            "Échanges profonds",
+            "Moments cocooning",
+            "Reconnexion à soi"
+          ]
+        },
+        {
+          "type": "list",
+          "icon": "sparkle",
+          "title": "Ce que tu vas vivre",
+          "check": "rose",
+          "items": [
+            "Cercles de parole bienveillants",
+            "Exercices de réflexion et d'introspection",
+            "Moments de détente et relaxation",
+            "Rituels bien-être simples et accessibles",
+            "Ateliers autour des soins naturels",
+            "Discussions sur l'estime de soi et l'équilibre intérieur",
+            "Reconnexion au corps et à l'esprit"
+          ]
+        },
+        {
+          "type": "tags",
+          "icon": "layers",
+          "title": "Quelques thèmes abordés",
+          "items": [
+            "Retrouver sa douceur intérieure",
+            "Prendre soin de soi autrement",
+            "Se reconnecter à sa féminité",
+            "Apprendre à ralentir",
+            "Lâcher la pression",
+            "Reprendre confiance en soi",
+            "Cultiver la paix intérieure",
+            "Se sentir belle et alignée"
+          ]
+        },
+        {
+          "type": "format",
+          "icon": "calendar",
+          "title": "Format du programme",
+          "boxes": [
+            {
+              "value": "4–6",
+              "label": "Semaines"
+            },
+            {
+              "value": "1/sem.",
+              "label": "Rencontre groupe"
+            }
+          ],
+          "note": "En <strong>présentiel ou en ligne</strong>, selon les participantes.",
+          "inclus": [
+            "Accompagnement de groupe chaleureux",
+            "Fiches et exercices bien-être",
+            "Moments d'échange sincères",
+            "Rituels self-care guidés",
+            "Groupe privé de soutien (WhatsApp/Messenger)"
+          ],
+          "addons": {
+            "label": "Options possibles en supplément",
+            "items": [
+              "Mini coffret bien-être",
+              "Huiles naturelles",
+              "Soins Vegederm",
+              "Journal personnel",
+              "Tisane",
+              "Soirée cocooning",
+              "Atelier masque visage",
+              "Soin des pieds"
+            ]
+          }
+        },
+        {
+          "type": "pourqui",
+          "icon": "users",
+          "title": "Ce programme est fait pour toi si…",
+          "label": "Tu te reconnais ici :",
+          "items": [
+            "Tu te sens fatiguée émotionnellement",
+            "Tu veux retrouver ton énergie et ta vitalité",
+            "Tu cherches un espace doux et sans jugement",
+            "Tu as besoin de ralentir et de reprendre souffle",
+            "Tu souhaites te reconnecter à toi-même"
+          ]
+        },
+        {
+          "type": "dark",
+          "icon": "shield",
+          "title": "L'intention du programme",
+          "intro": "Ce programme n'est pas seulement du bien-être extérieur. C'est une <strong>invitation à renaître intérieurement.</strong>",
+          "label": "À retrouver en toi…",
+          "items": [
+            "Ta paix",
+            "Ta valeur",
+            "Ta douceur",
+            "Ta lumière"
+          ]
+        }
+      ],
+      "cloture": {
+        "emoji": "🌸",
+        "text": "Parce qu'une femme qui recommence à prendre soin d'elle…\n\n<em>commence aussi, doucement, à renaître.</em>"
+      }
+    },
+    "programme3": {
+      "badge": "Accompagnement de groupe",
+      "title": "Oser",
+      "em": "entreprendre autrement",
+      "price": "65 $",
+      "sub": "Pour les femmes qui veulent créer, structurer ou développer leur activité avec confiance — à leur rythme.",
+      "image": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=800&h=400",
+      "quote": "Beaucoup de femmes ont des idées et des talents, mais l'incertitude freine souvent les plus brillants projets. Ensemble, structurons votre vision avec méthode et élégance.",
+      "tags": [
+        "Clarté",
+        "Action",
+        "Visibilité",
+        "Confiance",
+        "Croissance"
+      ],
+      "cta": {
+        "label": "Débuter mon projet",
+        "url": "https://wa.me/",
+        "target": "_blank",
+        "note": "Accompagnement stratégique et humain",
+        "popup": ""
+      },
+      "sections": [
+        {
+          "type": "list",
+          "icon": "chart",
+          "title": "Une approche simple, humaine et réaliste",
+          "intro": "Ce programme n'est pas théorique. Il est basé sur <strong>l'action, la réalité du terrain</strong> et ton expérience concrète. Il aide chaque participante à :",
+          "check": "blue",
+          "items": [
+            "Clarifier son idée ou son projet",
+            "Structurer son activité de manière simple",
+            "Oser se lancer sans attendre la perfection",
+            "Vendre avec confiance et sans malaise",
+            "Développer sa visibilité sur les réseaux",
+            "Avancer étape par étape, à son propre rythme"
+          ]
+        },
+        {
+          "type": "list",
+          "icon": "sparkle",
+          "title": "Ce que tu vas vivre",
+          "check": "accent",
+          "items": [
+            "Identification de ton idée ou projet de manière concrète",
+            "Construction d'une offre simple, claire et vendable",
+            "Bases du marketing (Facebook, TikTok, Instagram)",
+            "Stratégies de vente accessibles et sans pression",
+            "Développement de la confiance entrepreneuriale",
+            "Accompagnement pour dépasser la peur de se lancer",
+            "Exercices pratiques concrets chaque semaine"
+          ]
+        },
+        {
+          "type": "tags",
+          "icon": "layers",
+          "title": "Quelques thèmes abordés",
+          "items": [
+            "Transformer une idée en revenu",
+            "Vendre sans se sentir mal à l'aise",
+            "Se rendre visible",
+            "Commencer avec peu de moyens",
+            "Mindset de l'entrepreneure",
+            "Organisation simple d'une activité",
+            "Fidélisation des clients",
+            "Développement progressif"
+          ]
+        },
+        {
+          "type": "format",
+          "icon": "calendar",
+          "title": "Format du programme",
+          "boxes": [
+            {
+              "value": "6–8",
+              "label": "Semaines"
+            },
+            {
+              "value": "1/sem.",
+              "label": "Séance de groupe"
+            }
+          ],
+          "note": "Séances en <strong>Zoom ou présentiel</strong>, selon les participantes.",
+          "inclus": [
+            "Coaching de groupe bienveillant et motivant",
+            "Exercices pratiques hebdomadaires",
+            "Plan d'action personnalisé",
+            "Espace de questions / réponses en direct",
+            "Groupe privé de soutien entre participantes"
+          ],
+          "addons": null
+        },
+        {
+          "type": "pourqui",
+          "icon": "users",
+          "title": "Ce programme est fait pour toi si…",
+          "label": "Tu te reconnais ici :",
+          "items": [
+            "Tu veux démarrer une activité mais tu ne sais pas comment",
+            "Tu as une idée mais tu hésites encore à te lancer",
+            "Tu veux gagner en autonomie financière",
+            "Tu veux entreprendre à ton propre rythme",
+            "Tu veux apprendre sans jargon compliqué"
+          ]
+        },
+        {
+          "type": "dark",
+          "icon": "shield",
+          "title": "Ce qui rend ce programme unique",
+          "intro": "Ce programme est particulièrement puissant parce qu'il repose sur une <strong>expérience réelle et vécue</strong> — pas seulement une théorie.",
+          "label": "",
+          "items": [
+            "Entrepreneuriat concret sur le terrain",
+            "Vente et distribution pratiques",
+            "Réseaux sociaux appliqués",
+            "Accompagnement de projets réels",
+            "Développement de produits naturels"
+          ],
+          "closing": "Ce n'est pas de la théorie. C'est du vécu, du concret, du réel — transmis avec sincérité."
+        }
+      ],
+      "cloture": {
+        "emoji": "🚀",
+        "text": "Parce qu'entre rêver et réussir…\n\n<em>il y a un pas que chaque femme peut oser franchir, à sa manière.</em>"
+      }
+    },
+    "coaching-de-groupe": {
+      "badge": "Accompagnement de groupe",
+      "title": "Coaching",
+      "em": "de groupe",
+      "price": "",
+      "sub": "Sessions collectives · Communauté · Évolution ensemble",
+      "image": "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=800&h=400",
+      "quote": "Cheminer seule, c'est avancer. Cheminer ensemble, c'est grandir plus vite. Le coaching de groupe crée un espace d'émulation douce où chaque femme avance, soutenue par les autres.",
+      "tags": [
+        "Communauté",
+        "Échange",
+        "Confiance",
+        "Entraide",
+        "Dynamique de groupe"
+      ],
+      "cta": {
+        "label": "Rejoindre un groupe",
+        "url": "https://wa.me/",
+        "target": "_blank",
+        "note": "Échanges privés et confidentiels",
+        "popup": ""
+      },
+      "sections": [
+        {
+          "type": "list",
+          "icon": "users",
+          "title": "Ce que le groupe t'apporte",
+          "check": "accent",
+          "items": [
+            "Un espace d'écoute et de partage entre femmes",
+            "L'énergie et la motivation du collectif",
+            "Des échanges bienveillants et sans jugement",
+            "Des retours et perspectives nouvelles",
+            "Un sentiment d'appartenance et de soutien"
+          ]
+        },
+        {
+          "type": "list",
+          "icon": "sparkle",
+          "title": "Ce que tu vas vivre",
+          "check": "rose",
+          "items": [
+            "Des sessions collectives animées en douceur",
+            "Des exercices de réflexion partagés",
+            "Des moments de parole et d'écoute",
+            "Des outils concrets pour avancer",
+            "Un accompagnement humain et structuré"
+          ]
+        },
+        {
+          "type": "tags",
+          "icon": "layers",
+          "title": "Quelques thèmes abordés",
+          "items": [
+            "Reprendre confiance en soi",
+            "Se reconnecter à sa valeur",
+            "Avancer sans culpabilité",
+            "Sortir de l'isolement",
+            "Se fixer des objectifs réalistes",
+            "Grandir au contact des autres"
+          ]
+        },
+        {
+          "type": "format",
+          "icon": "calendar",
+          "title": "Format du coaching",
+          "boxes": [
+            {
+              "value": "6",
+              "label": "Semaines"
+            },
+            {
+              "value": "1/sem.",
+              "label": "Session de groupe"
+            }
+          ],
+          "note": "Sessions en <strong>Zoom ou en présentiel</strong>, selon les participantes.",
+          "inclus": [
+            "Sessions de groupe bienveillantes",
+            "Espace d'échange privé (WhatsApp ou Messenger)",
+            "Exercices de réflexion partagés",
+            "Soutien du groupe tout au long du parcours"
+          ],
+          "addons": null
+        },
+        {
+          "type": "pourqui",
+          "icon": "users",
+          "title": "Ce coaching est fait pour toi si…",
+          "label": "Tu te reconnais ici :",
+          "items": [
+            "Tu te sens isolée dans ton cheminement",
+            "Tu veux avancer soutenue par d'autres femmes",
+            "Tu as besoin de motivation et de régularité",
+            "Tu veux échanger dans un cadre bienveillant",
+            "Tu es prête à grandir ensemble"
+          ]
+        },
+        {
+          "type": "dark",
+          "icon": "shield",
+          "title": "L'intention de ce coaching",
+          "intro": "Ce coaching ne remplace pas ta singularité : il la révèle, portée par la force du collectif.",
+          "label": "Ensemble, on peut…",
+          "items": [
+            "Se soutenir sans compétition",
+            "S'écouter sans jugement",
+            "S'encourager avec sincérité",
+            "Grandir chacune à son rythme"
+          ]
+        }
+      ],
+      "cloture": {
+        "emoji": "🤝",
+        "text": "Une femme seule avance, des femmes ensemble…\n\n<em>transforment leur vie.</em>"
+      }
+    },
+    "formation": {
+      "badge": "Formation",
+      "title": "Expertise",
+      "em": "Bien-être",
+      "price": "",
+      "sub": "Formation certifiante · Apprendre les bases · Se professionnaliser",
+      "image": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=800&h=400",
+      "quote": "Transmettre, c'est permettre à d'autres de prendre soin d'elles-mêmes — et parfois d'en faire leur métier. Cette formation pose des bases claires, concrètes et applicables.",
+      "tags": [
+        "Certification",
+        "Bases solides",
+        "Pratique",
+        "Métier",
+        "Transmission"
+      ],
+      "cta": {
+        "label": "Demander les informations",
+        "url": "https://wa.me/",
+        "target": "_blank",
+        "note": "Réponse rapide et personnalisée",
+        "popup": ""
+      },
+      "sections": [
+        {
+          "type": "list",
+          "icon": "book",
+          "title": "Ce que tu vas apprendre",
+          "check": "accent",
+          "items": [
+            "Les fondamentaux du bien-être au féminin",
+            "Les bases des soins naturels",
+            "Comprendre et prendre soin de soi",
+            "Accompagner simplement d'autres personnes",
+            "Bâtir une activité de bien-être pas à pas"
+          ]
+        },
+        {
+          "type": "list",
+          "icon": "sparkle",
+          "title": "Ce que tu vas obtenir",
+          "check": "rose",
+          "items": [
+            "Des connaissances claires et structurées",
+            "Une certification reconnue",
+            "Des outils pratiques et réutilisables",
+            "La confiance pour te lancer",
+            "Un accompagnement humain tout au long"
+          ]
+        },
+        {
+          "type": "tags",
+          "icon": "layers",
+          "title": "Quelques modules abordés",
+          "items": [
+            "Bien-être féminin",
+            "Soins naturels",
+            "Confiance en soi",
+            "Écoute et accompagnement",
+            "Organisation d'une activité",
+            "Clientèle et communication"
+          ]
+        },
+        {
+          "type": "format",
+          "icon": "calendar",
+          "title": "Format de la formation",
+          "boxes": [
+            {
+              "value": "Flexible",
+              "label": "En ligne"
+            },
+            {
+              "value": "Certif.",
+              "label": "En fin de parcours"
+            }
+          ],
+          "note": "Modules accessibles en <strong>ligne, à ton rythme</strong>, avec un suivi personnalisé.",
+          "inclus": [
+            "Modules de formation complets",
+            "Supports de cours et fiches pratiques",
+            "Suivi et questions / réponses",
+            "Certification en fin de parcours"
+          ],
+          "addons": null
+        },
+        {
+          "type": "pourqui",
+          "icon": "users",
+          "title": "Cette formation est faite pour toi si…",
+          "label": "Tu te reconnais ici :",
+          "items": [
+            "Tu veux apprendre les bases du bien-être",
+            "Tu souhaites prendre soin de toi et des autres",
+            "Tu rêves d'en faire une activité",
+            "Tu veux te professionnaliser avec méthode",
+            "Tu es prête à te former sérieusement"
+          ]
+        },
+        {
+          "type": "dark",
+          "icon": "shield",
+          "title": "L'esprit de cette formation",
+          "intro": "Ce n'est pas une formation théorique de plus. C'est une transmission <strong>concrète et bienveillante</strong>.",
+          "label": "Tu repars avec…",
+          "items": [
+            "Des bases solides et applicables",
+            "Des méthodes simples",
+            "Une vision claire de ton projet",
+            "L'envie de te lancer"
+          ]
+        }
+      ],
+      "cloture": {
+        "emoji": "🎓",
+        "text": "Apprendre, c'est déjà s'autoriser…\n\n<em>à devenir la professionnelle que tu rêves d'être.</em>"
+      }
+    }
+  }
+}

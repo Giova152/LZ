@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administration — Lynette Zoumenou</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-view" class="login-wrap">
+  <form id="login-form" class="login-card">
+    <div class="login-logo">🌿</div>
+    <h1>Administration</h1>
+    <p class="login-sub">Espace privé — Lynette Zoumenou</p>
+    <label>Identifiant
+      <input type="text" id="login-user" autocomplete="username" required>
+    </label>
+    <label>Mot de passe
+      <input type="password" id="login-pass" autocomplete="current-password" required>
+    </label>
+    <p id="login-err" class="err"></p>
+    <button type="submit" class="btn-primary">Se connecter</button>
+  </form>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dash-view" hidden>
+  <header class="topbar">
+    <div class="brand">🌿 <b>Admin</b><span class="sep">·</span>Lynette Zoumenou</div>
+    <div class="top-actions">
+      <a href="/" target="_blank" class="link-btn">↗ Voir le site</a>
+      <button id="reset-btn" class="ghost-btn">Annuler</button>
+      <button id="save-btn" class="save-btn">💾 Enregistrer</button>
+      <button id="logout-btn" class="ghost-btn">Déconnexion</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="side">
+      <nav id="side-nav"></nav>
+    </aside>
+    <main class="main">
+      <div id="view"></div>
+    </main>
+  </div>
+
+  <div id="toast" class="toast"></div>
+</div>
+
+<script src="/admin/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lynette Zoumenou</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ivory:#f7f3ec;--cream:#ede8de;--warm-white:#faf8f4;
+  --gold:#b8914d;--gold-light:#d4ae70;--gold-pale:#f0e0c0;--gold-dim:#8a6930;
+  --charcoal:#1c1a17;--mid:#2e2b26;--muted:#6e6459;--lighter:#9e9387;
+  --border:rgba(184,145,77,.18);--border-h:rgba(184,145,77,.42);
+  --surface:rgba(255,255,255,.72);--surface2:rgba(255,255,255,.45);
+  --divider:rgba(184,145,77,.1);
+  --shadow-sm:0 4px 20px rgba(30,24,14,.03);
+  --shadow-md:0 16px 40px rgba(30,24,14,.08);
+  --shadow-lg:0 20px 60px rgba(30,24,14,.14);
+  --radius-sm:10px;--radius-md:16px;--radius-lg:24px;--radius-xl:32px;
+  --tr:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--ivory);color:var(--charcoal);min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:32px 16px 64px;position:relative;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 60% 50% at 10% 5%,rgba(212,174,112,.13) 0%,transparent 55%),radial-gradient(ellipse 50% 60% at 92% 90%,rgba(184,145,77,.11) 0%,transparent 55%),radial-gradient(ellipse 40% 40% at 50% 50%,rgba(240,224,192,.07) 0%,transparent 60%);pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;inset:0;background-image:radial-gradient(circle,rgba(184,145,77,.045) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;z-index:0}
+
+.card{position:relative;z-index:1;background:var(--warm-white);width:100%;max-width:560px;border-radius:var(--radius-xl);border:1px solid var(--border);overflow:hidden;box-shadow:var(--shadow-lg),0 1px 0 rgba(255,255,255,.9) inset;animation:cardIn .6s cubic-bezier(.22,1,.36,1) both}
+@keyframes cardIn{from{opacity:0;transform:translateY(28px) scale(.97)}to{opacity:1;transform:none}}
+.card-accent{height:3px;background:linear-gradient(90deg,transparent 0%,var(--gold-dim) 20%,var(--gold) 50%,var(--gold-light) 70%,transparent 100%)}
+
+.header{display:flex;flex-direction:column;align-items:center;padding:40px 24px 20px;gap:10px;position:relative}
+.avatar-ring{position:relative;display:inline-flex;margin-bottom:2px}
+.avatar-ring::before{content:'';position:absolute;inset:-5px;border-radius:50%;background:conic-gradient(from 0deg, transparent, var(--gold), transparent);animation:spinRing 15s linear infinite;z-index:0;opacity:0.4}
+.avatar-ring::after{content:'';position:absolute;inset:-1px;border-radius:50%;background:var(--warm-white);z-index:1;border: 1px solid var(--border)}
+@keyframes spinRing{to{transform:rotate(360deg)}}
+.avatar{position:relative;z-index:2;width:100px;height:100px;border-radius:50%;object-fit:cover;background:var(--cream)}
+.name{font-family:'Playfair Display',serif;font-size:1.9rem;font-weight:700;color:var(--charcoal);letter-spacing:-0.02em;text-align:center;animation:fadeUp .5s .12s both}
+.name em{color:var(--gold);font-style:italic;font-weight:400}
+.ornament{display:flex;align-items:center;gap:10px;animation:fadeUp .5s .16s both}
+.ornament-line{width:30px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.ornament-line.r{background:linear-gradient(90deg,var(--gold),transparent)}
+.ornament-diamond{width:5px;height:5px;background:var(--gold);transform:rotate(45deg)}
+.tagline{font-size:.72rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--lighter);animation:fadeUp .5s .2s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.socials{display:flex;gap:4px;animation:fadeUp .5s .24s both}
+.socials a{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:var(--radius-sm);color:var(--lighter);text-decoration:none;background:var(--surface2);border:1px solid var(--border);transition:color var(--tr),background var(--tr),border-color var(--tr),transform var(--tr)}
+.socials a:hover{color:var(--gold);background:var(--gold-pale);border-color:var(--border-h);transform:translateY(-2px)}
+.socials svg{width:18px;height:18px}
+
+.tab-nav{display:flex;background:var(--cream);border:1px solid var(--border);border-radius:50px;padding:4px;max-width:280px;width:100%;margin:8px auto 0;animation:fadeUp .5s .28s both;gap:2px}
+.tab-btn{flex:1;padding:9px 0;border:none;background:transparent;color:var(--muted);font-family:'Outfit',sans-serif;font-size:.72rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border-radius:50px;cursor:pointer;transition:background var(--tr),color var(--tr),box-shadow var(--tr)}
+.tab-btn.active{background:var(--charcoal);color:var(--gold-light);font-weight:700;box-shadow:0 2px 10px rgba(28,26,23,.22)}
+
+.content{padding:12px 20px 28px}
+
+.profil-wrap{display:flex;flex-direction:column;gap:14px}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.stat-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:18px 10px;text-align:center;transition:border-color var(--tr),transform var(--tr),box-shadow var(--tr);animation:fadeUp .42s both;backdrop-filter:blur(8px)}
+.stat-box:hover{border-color:var(--border-h);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.stat-num{font-family:'Outfit',sans-serif;font-size:1.7rem;font-weight:700;color:var(--gold);line-height:1}
+.stat-lbl{font-size:.65rem;color:var(--lighter);margin-top:5px;text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+.profil-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:20px 22px;animation:fadeUp .42s both;backdrop-filter:blur(8px)}
+.profil-section-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--charcoal);letter-spacing:.02em;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.profil-section-title::before{content:'';display:block;width:3px;height:14px;background:var(--gold);border-radius:2px;flex-shrink:0}
+.profil-text{font-size:0.95rem;color:var(--muted);line-height:1.85;font-weight:300;letter-spacing:0.01em}
+.badge-row{display:flex;flex-wrap:wrap;gap:7px}
+.badge{display:inline-flex;align-items:center;gap:5px;background:rgba(184,145,77,.08);border:1px solid var(--border);color:var(--gold-dim);font-size:.69rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;padding:5px 12px;border-radius:50px;transition:background var(--tr),border-color var(--tr)}
+.badge:hover{background:rgba(184,145,77,.15);border-color:var(--border-h)}
+
+/* SERVICES */
+.services-wrap{display:flex;flex-direction:column;gap:14px}
+.cat-block{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);overflow:hidden;animation:fadeUp .42s both;backdrop-filter:blur(8px);box-shadow:var(--shadow-sm)}
+.cat-head{display:flex;align-items:center;gap:12px;padding:14px 18px;background:linear-gradient(90deg,rgba(184,145,77,.07),transparent);border-bottom:1px solid var(--divider)}
+.cat-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--gold-dim),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(184,145,77,.28)}
+.cat-icon svg{width:16px;height:16px}
+.cat-head-label{font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--charcoal);flex:1}
+.cat-head{cursor:pointer;transition:background var(--tr);user-select:none}
+.cat-head:hover{background:linear-gradient(90deg,rgba(184,145,77,.12),transparent)}
+.cat-chevron{transition:transform .3s cubic-bezier(.4,0,.2,1),color var(--tr);color:var(--lighter);margin-left:10px;width:14px;height:14px;flex-shrink:0}
+.cat-block.active .cat-chevron{transform:rotate(180deg);color:var(--gold)}
+.cat-count{font-size:.68rem;font-weight:700;color:var(--gold-dim);background:rgba(184,145,77,.1);border:1px solid var(--border);border-radius:50px;padding:2px 9px}
+.cat-links{display:flex;flex-direction:column;max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.4,0,.2,1),opacity .3s ease;opacity:0}
+.cat-block.active .cat-links{max-height:800px;opacity:1}
+.cat-link{display:flex;align-items:center;gap:13px;padding:13px 18px;text-decoration:none;color:var(--charcoal);border-bottom:1px solid var(--divider);transition:background var(--tr),padding-left var(--tr);cursor:pointer}
+.cat-link:last-child{border-bottom:none}
+.cat-link:hover{background:rgba(184,145,77,.06);padding-left:22px}
+.cat-link-thumb{width:44px;height:44px;border-radius:var(--radius-sm);object-fit:cover;flex-shrink:0;border:1px solid var(--border);background:var(--cream)}
+.cat-link-info{flex:1;min-width:0}
+.cat-link-label{font-size:.875rem;font-weight:600;color:var(--charcoal);line-height:1.3}
+.cat-link-sub{font-size:.72rem;color:var(--lighter);margin-top:2px;font-weight:400}
+.cat-link-arrow{width:14px;height:14px;color:var(--lighter);flex-shrink:0;opacity:0;transform:translateX(-4px);transition:opacity var(--tr),transform var(--tr),color var(--tr)}
+.cat-link:hover .cat-link-arrow{opacity:1;transform:none;color:var(--gold)}
+
+/* SHOP */
+.shop-wrap{display:flex;flex-direction:column;gap:22px}
+.shop-section-head{display:flex;align-items:center;gap:12px;margin-bottom:13px}
+.shop-section-icon{width:38px;height:38px;border-radius:11px;flex-shrink:0;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(0,0,0,.1)}
+.shop-section-icon.digital{background:linear-gradient(135deg,#1c3a5e,#2a6496)}
+.shop-section-icon.physical{background:linear-gradient(135deg,var(--gold-dim),var(--gold))}
+.shop-section-icon svg{width:18px;height:18px}
+.shop-section-info{flex:1}
+.shop-section-title{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--charcoal);line-height:1.2;letter-spacing:-0.01em}
+.shop-section-sub{font-size:.71rem;color:var(--lighter);margin-top:2px;font-weight:400}
+
+.scroll-row{display:flex;gap:12px;overflow-x:auto;padding:10px 20px 18px;margin:0 -20px;scroll-snap-type:x mandatory;scroll-padding:0 20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.scroll-row::-webkit-scrollbar{display:none}
+.shop-scroll-wrapper{position:relative;overflow:hidden}
+.shop-scroll-wrapper::after{content:'';position:absolute;top:0;right:0;width:60px;height:100%;background:linear-gradient(to right,transparent,var(--warm-white));pointer-events:none;z-index:2}
+.ebook-card{background:var(--warm-white);border:1px solid rgba(184,145,77,0.12);border-radius:var(--radius-md);overflow:hidden;text-decoration:none;color:inherit;flex-shrink:0;width:190px;scroll-snap-align:start;transition:all .4s cubic-bezier(.165, .84, .44, 1);position:relative;cursor:pointer;box-shadow:var(--shadow-sm)}
+.ebook-card:hover{border-color:var(--border-h);transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.ebook-card img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:var(--cream);transition:transform .4s}
+.ebook-card:hover img{transform:scale(1.08)}
+.ebook-card-body{padding:10px 12px 12px}
+.ebook-card-title{font-size:.75rem;font-weight:600;color:var(--charcoal);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:4px}
+.ebook-price{font-family:'Outfit',sans-serif;font-size:0.9rem;font-weight:700;margin-top:3px}
+.ebook-price.free{color:#3aaa5c}
+.ebook-price.paid{color:var(--gold)}
+.ebook-tag{position:absolute;top:8px;left:8px;font-size:.58rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:4px;backdrop-filter:blur(6px);z-index:3}
+.ebook-tag.free{background:rgba(58,170,92,.18);color:#2d8a4a;border:1px solid rgba(58,170,92,.3)}
+.ebook-tag.paid{background:rgba(184,145,77,.18);color:var(--gold-dim);border:1px solid rgba(184,145,77,.35)}
+
+.ebook-filters{display:flex;gap:6px;padding:10px 14px 0}
+.ebook-filter-btn{padding:6px 14px;border-radius:50px;border:1px solid var(--border);background:var(--surface2);color:var(--muted);font-family:'Outfit',sans-serif;font-size:.68rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:all var(--tr)}
+.ebook-filter-btn:hover{border-color:var(--border-h);background:var(--cream)}
+.ebook-filter-btn.active-free{background:rgba(58,170,92,.08);border-color:#3aaa5c;color:#2d8a4a}
+.ebook-filter-btn.active-paid{background:rgba(184,145,77,.08);border-color:var(--gold);color:var(--gold-dim)}
+.ebook-filter-btn.active-all{background:var(--charcoal);border-color:var(--charcoal);color:var(--gold-light);box-shadow: 0 4px 12px rgba(28,26,23,0.15)}
+
+.shop-card{background:var(--warm-white);border:1px solid rgba(184,145,77,0.12);border-radius:var(--radius-md);overflow:hidden;text-decoration:none;color:inherit;flex-shrink:0;width:190px;scroll-snap-align:start;transition:all .4s cubic-bezier(.165, .84, .44, 1);position:relative;box-shadow:var(--shadow-sm)}
+.shop-card:hover{border-color:var(--border-h);transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.shop-card img{width:100%;aspect-ratio:1;object-fit:cover;display:block;background:var(--cream);transition:transform .4s}
+.shop-card:hover img{transform:scale(1.08)}
+.shop-card.img-error{display:none}
+.shop-card-body{padding:12px 14px 14px}
+.shop-card-title{font-size:.8rem;font-weight:600;color:var(--charcoal);line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.shop-card-price{font-family:'Outfit',sans-serif;font-size:1rem;color:var(--gold);font-weight:700;margin-top:6px}
+.shop-card-tag{position:absolute;top:10px;left:10px;background:rgba(28,26,23,.8);color:var(--gold-light);font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 9px;border-radius:4px;backdrop-filter:blur(8px);z-index:3}
+
+.shop-cta{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:20px;padding:16px 24px;background:var(--charcoal);color:var(--gold-light);font-family:'Outfit',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;border-radius:var(--radius-sm);text-decoration:none;border:1px solid var(--charcoal);cursor:pointer;transition:all var(--tr);box-shadow:0 8px 20px rgba(28,26,23,0.12);width:100%}
+.shop-cta:hover{background:var(--mid);transform:translateY(-2px);box-shadow:0 12px 28px rgba(28,26,23,0.18)}
+.shop-cta svg{width:15px;height:15px;flex-shrink:0}
+.shop-section-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border-h),transparent)}
+
+.footer{display:flex;justify-content:center;align-items:center;padding:14px 0 10px;margin:0 20px;border-top:1px solid var(--divider);font-size:.7rem;color:var(--lighter);gap:5px}
+.footer a{color:var(--gold);text-decoration:none;font-weight:600;transition:opacity var(--tr)}
+.footer a:hover{opacity:.7}
+
+/* POPUP */
+.popup-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(20,16,10,.88);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px}
+.popup-overlay.open{display:flex}
+.popup-box{background:var(--warm-white);border-radius:var(--radius-lg);border:1px solid var(--border);padding:38px 28px 28px;max-width:400px;width:100%;position:relative;box-shadow:var(--shadow-lg);text-align:center;animation:popIn .32s cubic-bezier(.22,1,.36,1) both}
+@keyframes popIn{from{opacity:0;transform:translateY(18px) scale(.96)}to{opacity:1;transform:none}}
+.popup-close{position:absolute;top:14px;right:14px;width:30px;height:30px;border-radius:50%;background:var(--cream);border:1px solid var(--border);cursor:pointer;color:var(--muted);font-size:.85rem;display:flex;align-items:center;justify-content:center;transition:background var(--tr)}
+.popup-close:hover{background:var(--gold-pale)}
+.popup-emoji{font-size:2.2rem;display:block;margin-bottom:12px}
+.popup-titre{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--charcoal);line-height:1.35;margin-bottom:14px}
+.popup-titre span{color:var(--gold)}
+.popup-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(184,145,77,.1);border:1px solid var(--border);color:var(--gold-dim);border-radius:8px;font-size:.72rem;font-weight:600;padding:5px 12px;margin-bottom:16px}
+.popup-sous{font-size:.83rem;color:var(--muted);margin-bottom:18px;line-height:1.65}
+.popup-form input[type=text],.popup-form input[type=email]{width:100%;padding:13px 16px;background:var(--cream);border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--charcoal);font-family:'Outfit',sans-serif;font-size:.88rem;outline:none;margin-bottom:10px;transition:border-color var(--tr);display:block}
+.popup-form input:focus{border-color:var(--gold)}
+.popup-form input::placeholder{color:var(--lighter)}
+.popup-form button{width:100%;padding:14px;background:var(--charcoal);color:var(--gold-light);font-family:'Outfit',sans-serif;font-size:.88rem;font-weight:700;border:none;border-radius:var(--radius-sm);cursor:pointer;transition:background var(--tr),transform var(--tr);box-shadow:0 4px 16px rgba(28,26,23,.2);letter-spacing:.06em}
+.popup-form button:hover{background:var(--mid);transform:translateY(-1px)}
+.popup-note{font-size:.68rem;color:var(--lighter);margin-top:12px}
+
+@media(max-width:480px){
+  body{padding:14px 10px 52px}
+  .header{padding:30px 16px 18px}
+  .avatar{width:86px;height:86px}
+  .name{font-size:1.44rem}
+  .content{padding:10px 14px 24px}
+  .ebook-card{width:160px}
+  .shop-card{width:170px}
+}
+
+/* Bouton Retour en haut */
+.back-to-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  background: var(--charcoal);
+  color: var(--gold-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--tr);
+  border: 1px solid var(--border);
+}
+.back-to-top.show { opacity: 1; visibility: visible; }
+.back-to-top:hover { transform: translateY(-4px); background: var(--mid); box-shadow: var(--shadow-lg); color: var(--gold); }
+.back-to-top svg { width: 20px; height: 20px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="card-accent"></div>
+
+  <div class="header">
+    <div class="avatar-ring">
+      <img class="avatar" src="img/pt.png" alt="Lynette Zoumenou">
+    </div>
+    <div class="name"> Mme Lynette Zoumenou </div>
+    <div class="ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-diamond"></div>
+      <div class="ornament-line r"></div>
+    </div>
+    <div class="tagline">Santé · Beauté · Bien-être</div>
+
+    <div class="socials">
+      <!-- Réseaux sociaux = target="_blank" conservé (apps externes) -->
+      <a href="https://www.facebook.com/NettyyZoum" target="_blank" title="Facebook">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+      <a href="https://wa.me/" target="_blank" title="WhatsApp">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.52 3.48A11.93 11.93 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.6 5.97L0 24l6.22-1.57A11.94 11.94 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.22-3.48-8.52zM12 22c-1.85 0-3.66-.5-5.24-1.44l-.37-.22-3.88.98.99-3.77-.24-.38A9.94 9.94 0 0 1 2 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.93 9.93 0 0 1 22 12c0 5.52-4.48 10-10 10zm5.44-7.46c-.3-.15-1.77-.87-2.04-.97-.28-.1-.48-.15-.68.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.66-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.68-1.64-.93-2.24-.24-.59-.49-.5-.68-.51h-.58c-.2 0-.52.07-.79.37-.27.3-1.03 1.01-1.03 2.46s1.06 2.85 1.21 3.05c.15.2 2.08 3.18 5.04 4.46.7.3 1.25.48 1.68.62.71.22 1.35.19 1.86.11.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@user9298819554178" target="_blank" title="TikTok">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M15.9453 8.68918V15.6727C15.9453 19.1598 13.1048 22.0004 9.6177 22.0004C8.27369 22.0004 7.01685 21.5717 5.99251 20.8525C4.35796 19.7047 3.29004 17.8085 3.29004 15.6727C3.29004 12.1783 6.12333 9.34505 9.6104 9.34505C9.90101 9.34505 10.1843 9.36685 10.4676 9.40318V12.9121H10.4386C10.3151 12.8758 10.1843 12.8394 10.0536 12.8177H9.9954C9.86466 12.8032 9.74114 12.7813 9.60309 12.7813C8.00491 12.7813 6.70448 14.0817 6.70448 15.6799C6.70448 17.2782 8.00491 18.5786 9.60309 18.5786C11.2014 18.5786 12.5018 17.2782 12.5018 15.6799V2.00037H15.938C15.938 2.29822 15.9671 2.58881 16.0179 2.87213C16.2649 4.1798 17.035 5.30584 18.1175 6.01053C18.873 6.50452 19.7593 6.78785 20.7182 6.78785V10.2241C18.9416 10.2241 17.288 9.65222 15.9453 8.68918Z"/></svg>
+      </a>
+      <a href="mailto:contact@lynettezoumenou.com" title="Email">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M4.30606 7.28017C4.14002 7.62375 4.06901 7.99473 4.03469 8.4148C3.99999 8.83953 3.99999 9.36401 4 10.0143V13.9857C3.99999 14.6359 3.99999 15.1604 4.03469 15.5852C4.07042 16.0225 4.14591 16.4066 4.32698 16.7619C4.6146 17.3264 5.07354 17.7854 5.63803 18.073C5.9934 18.2541 6.37752 18.3296 6.81483 18.3653C7.23955 18.4 7.76404 18.4 8.4143 18.4H15.5857C16.236 18.4 16.7605 18.4 17.1852 18.3653C17.6225 18.3296 18.0066 18.2541 18.362 18.073C18.9265 17.7854 19.3854 17.3264 19.673 16.7619C19.8541 16.4066 19.9296 16.0225 19.9653 15.5852C20 15.1604 20 14.6359 20 13.9857V10.0143C20 9.36401 20 8.83953 19.9653 8.4148C19.931 7.99473 19.86 7.62375 19.6939 7.28017L13.8997 12.0209C12.7946 12.9251 11.2054 12.9251 10.1003 12.0209L4.30606 7.28017Z"/><path d="M18.9609 6.3295C18.7792 6.17262 18.5783 6.0372 18.362 5.92696C18.0066 5.74588 17.6225 5.6704 17.1852 5.63467C16.7605 5.59997 16.236 5.59997 15.5857 5.59998H8.41432C7.76406 5.59997 7.23955 5.59997 6.81483 5.63467C6.37752 5.6704 5.9934 5.74588 5.63803 5.92696C5.42166 6.0372 5.2208 6.17262 5.03915 6.3295L10.8602 11.0922C11.5232 11.6347 12.4768 11.6347 13.1398 11.0922L18.9609 6.3295Z"/></svg>
+      </a>
+    </div>
+
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="showTab('profil',this)">Profil</button>
+      <button class="tab-btn" onclick="showTab('services',this)">Services</button>
+      <button class="tab-btn" onclick="showTab('shop',this)">Shop</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- PROFIL -->
+    <div id="tab-profil" class="profil-wrap">
+      <div class="stats-grid">
+        <div class="stat-box" style="animation-delay:.04s">
+          <div class="stat-num">12+</div><div class="stat-lbl">Ans d'expérience</div>
+        </div>
+        <div class="stat-box" style="animation-delay:.09s">
+          <div class="stat-num">2k+</div><div class="stat-lbl">Clients satisfaits</div>
+        </div>
+        <div class="stat-box" style="animation-delay:.14s">
+          <div class="stat-num">9</div><div class="stat-lbl">Programmes</div>
+        </div>
+      </div>
+      <div class="profil-card" style="animation-delay:.1s">
+        <div class="profil-section-title">À propos</div>
+        <p class="profil-text">Passionnée par la santé, la beauté et le bien-être, j'accompagne les femmes à prendre soin d'elles — de l'intérieur comme de l'extérieur. Auteure, coach et conférencière, je partage mes méthodes pour vivre mieux au quotidien.</p>
+      </div>
+      <div class="profil-card" style="animation-delay:.16s">
+        <div class="profil-section-title">Domaines d'expertise</div>
+        <div class="badge-row">
+          <span class="badge">✦ Soins naturels</span>
+          <span class="badge">✦ Bien-être féminin</span>
+          <span class="badge">✦ Coaching</span>
+          <span class="badge">✦ Formation & Ebooks</span>
+          <span class="badge">✦ Entrepreneuriat</span>
+          <span class="badge">✦ Programmes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <div id="tab-services" class="services-wrap" style="display:none">
+
+      <!-- RDV Gratuit -->
+      <div class="cat-block active" style="animation-delay:.04s">
+        <div class="cat-head" onclick="toggleAccordion(this)">
+          <div class="cat-icon pulse-icon" style="background:linear-gradient(135deg,#10b981,#059669)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <span class="cat-head-label">Réserver un rdv gratuit</span>
+          <span class="cat-count">1</span>
+          <svg class="cat-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="cat-links">
+          <a class="cat-link" href="appel-decouverte.html">
+            <img class="cat-link-thumb" src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=150&h=150" alt="Appel découverte">
+            <div class="cat-link-info">
+              <div class="cat-link-label">Appel découverte (30 min)</div>
+              <div class="cat-link-sub">Gratuit · Confidentiel · Sans engagement</div>
+            </div>
+            <svg class="cat-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Coaching -->
+      <div class="cat-block" style="animation-delay:.1s">
+        <div class="cat-head" onclick="toggleAccordion(this)">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
+              <circle cx="12" cy="8" r="3.5"/>
+              <path d="M5 20c0-3.866 3.134-7 7-7s7 3.134 7 7"/>
+            </svg>
+          </div>
+          <span class="cat-head-label">Coaching</span>
+          <span class="cat-count">2</span>
+          <svg class="cat-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="cat-links">
+          <a class="cat-link" href="coaching-individuel.html">
+            <img class="cat-link-thumb" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=150&h=150" alt="Coaching individuel">
+            <div class="cat-link-info">
+              <div class="cat-link-label">Renaissance personnelle</div>
+              <div class="cat-link-sub">Coaching individuel · Transformation</div>
+            </div>
+            <svg class="cat-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          <a class="cat-link" href="lien">
+            <img class="cat-link-thumb" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=150&h=150" alt="Coaching de groupe">
+            <div class="cat-link-info">
+              <div class="cat-link-label">Coaching de groupe</div>
+              <div class="cat-link-sub">Sessions collectives · Communauté</div>
+            </div>
+            <svg class="cat-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Programmes -->
+      <div class="cat-block" style="animation-delay:.16s">
+        <div class="cat-head" onclick="toggleAccordion(this)">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <span class="cat-head-label">Programmes</span>
+          <span class="cat-count">4</span>
+          <svg class="cat-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="cat-links">
+          <a class="cat-link" href="programme/programme1.html">
+            <img class="cat-link-thumb" src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&q=80&w=150&h=150" alt="Reprendre sa place">
+            <div class="cat-link-info">
+              <div class="cat-link-label">Reprendre sa place</div>
+              <div class="cat-link-sub">Un espace doux et transformateur pour les femmes qui veulent se retrouver, se reconstruire et avancer autrement.</div>
+            </div>
+            <svg class="cat-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          <a class="cat-link" href="programme/programme2.html">
+            <img class="cat-link-thumb" src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&q=80&w=150&h=150" alt="Femmes & Renaissance">
+            <div class="cat-link-info">
+              <div class="cat-link-label">Femmes & Renaissance</div>
+              <div class="cat-link-sub">Une parenthèse de douceur pour les femmes qui veulent se reconnecter à elles-mêmes.</div>
+            </div>
+            <svg class="cat-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          <a class="cat-link" href="programme/programme3.html">
+            <img class="cat-link-thumb" src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&q=80&w=150&h=150" alt="Oser entreprendre autrement">
+            <div class="cat-link-info">
+              <div class="cat-link-label">Oser entreprendre autrement</div>
+              <div class="cat-link-sub">Pour les femmes qui veulent créer, structurer ou développer leur activité avec confiance — à leur rythme.</div>
+            </div>
+            <svg class="cat-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          <a class="cat-link" href="programme/programme4.html">
+            <img class="cat-link-thumb" src="https://ugc.production.linktr.ee/440f5382-504a-41ff-b443-1d616ece0555_image.png?io=true&size=thumbnail-stack_v1_0" alt="">
+            <div class="cat-link-info">
+              <div class="cat-link-label">Programme 4</div>
+              <div class="cat-link-sub">Description courte du programme</div>
+            </div>
+            <svg class="cat-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Formation -->
+      <div class="cat-block" style="animation-delay:.22s">
+        <div class="cat-head" onclick="toggleAccordion(this)">
+          <div class="cat-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </div>
+          <span class="cat-head-label">Formation</span>
+          <span class="cat-count">1</span>
+          <svg class="cat-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path d="M19 9l-7 7-7-7"/></svg>
+        </div>
+        <div class="cat-links">
+          <a class="cat-link" href="lien">
+            <img class="cat-link-thumb" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=150&h=150" alt="Formation">
+            <div class="cat-link-info">
+              <div class="cat-link-label">Expertise Bien-être</div>
+              <div class="cat-link-sub">Formation certifiante · Apprendre les bases</div>
+            </div>
+            <svg class="cat-link-arrow" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SHOP -->
+    <div id="tab-shop" class="shop-wrap" style="display:none">
+
+      <div style="animation:fadeUp .4s .04s both">
+        <div class="shop-section-head">
+          <div class="shop-section-icon digital">
+            <svg fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </div>
+          <div class="shop-section-info">
+            <div class="shop-section-title">Produits digitaux</div>
+            <div class="shop-section-sub">E-books gratuits & payants · Téléchargement immédiat</div>
+          </div>
+        </div>
+
+        <div class="ebook-filters">
+          <button class="ebook-filter-btn active-all" onclick="filterEbooks('all',this)">Tous</button>
+          <button class="ebook-filter-btn" onclick="filterEbooks('free',this)">🟢 Gratuits</button>
+          <button class="ebook-filter-btn" onclick="filterEbooks('paid',this)">🟡 Payants</button>
+        </div>
+
+        <div class="shop-scroll-wrapper">
+          <div class="scroll-row" id="ebook-row">
+            <div class="ebook-card systeme-show-popup-23257437" data-type="free">
+              <span class="ebook-tag free">Gratuit</span>
+              <img src="https://images.unsplash.com/photo-1535136029863-4a3e36ab2dc8?auto=format&fit=crop&q=80&w=300&h=400" alt="Soins de pieds">
+              <div class="ebook-card-body"><div class="ebook-card-title">Soins de pieds</div><div class="ebook-price free">Gratuit</div></div>
+            </div>
+            <a class="ebook-card" href="https://www.investirencpe.com/checkout" data-type="paid">
+              <span class="ebook-tag paid">10 $</span>
+              <img src="https://images.unsplash.com/photo-1472162072142-d544e73e7fb7?auto=format&fit=crop&q=80&w=300&h=400" alt="Garderie rentable">
+              <div class="ebook-card-body"><div class="ebook-card-title">5 étapes pour ouvrir une garderie rentable</div><div class="ebook-price paid">10 $</div></div>
+            </a>
+            <div class="ebook-card systeme-show-popup-23260243" data-type="free">
+              <span class="ebook-tag free">Gratuit</span>
+              <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=300&h=400" alt="Conte pour enfant">
+              <div class="ebook-card-body"><div class="ebook-card-title">Conte pour enfant</div><div class="ebook-price free">Gratuit</div></div>
+            </div>
+            <a class="ebook-card" href="lien" data-type="paid">
+              <span class="ebook-tag paid">15 $</span>
+              <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=300&h=400" alt="">
+              <div class="ebook-card-body"><div class="ebook-card-title">Ebook payant 2</div><div class="ebook-price paid">15 $</div></div>
+            </a>
+            <div class="ebook-card" data-type="free">
+              <span class="ebook-tag free">Gratuit</span>
+              <img src="https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?auto=format&fit=crop&q=80&w=300&h=400" alt="">
+              <div class="ebook-card-body"><div class="ebook-card-title">Ebook gratuit 3</div><div class="ebook-price free">Gratuit</div></div>
+            </div>
+            <a class="ebook-card" href="lien" data-type="paid">
+              <span class="ebook-tag paid">20 $</span>
+              <img src="https://images.unsplash.com/photo-1589998059171-988d887df64e?auto=format&fit=crop&q=80&w=300&h=400" alt="">
+              <div class="ebook-card-body"><div class="ebook-card-title">Ebook payant 3</div><div class="ebook-price paid">20 $</div></div>
+            </a>
+            <div class="ebook-card" data-type="free">
+              <span class="ebook-tag free">Gratuit</span>
+              <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?auto=format&fit=crop&q=80&w=300&h=400" alt="">
+              <div class="ebook-card-body"><div class="ebook-card-title">Ebook gratuit 4</div><div class="ebook-price free">Gratuit</div></div>
+            </div>
+            <a class="ebook-card" href="lien" data-type="paid">
+              <span class="ebook-tag paid">12 $</span>
+              <img src="https://images.unsplash.com/photo-1491843351663-8c436628b941?auto=format&fit=crop&q=80&w=300&h=400" alt="">
+              <div class="ebook-card-body"><div class="ebook-card-title">Ebook payant 4</div><div class="ebook-price paid">12 $</div></div>
+            </a>
+            <div class="ebook-card" data-type="free">
+              <span class="ebook-tag free">Gratuit</span>
+              <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=300&h=400" alt="">
+              <div class="ebook-card-body"><div class="ebook-card-title">Ebook gratuit 5</div><div class="ebook-price free">Gratuit</div></div>
+            </div>
+            <a class="ebook-card" href="lien" data-type="paid">
+              <span class="ebook-tag paid">8 $</span>
+              <img src="img/45.png" alt="">
+              <div class="ebook-card-body"><div class="ebook-card-title">Ebook payant 5</div><div class="ebook-price paid">8 $</div></div>
+            </a>
+            <div class="ebook-card" data-type="free">
+              <span class="ebook-tag free">Gratuit</span>
+              <img src="img/oo.png" alt="">
+              <div class="ebook-card-body"><div class="ebook-card-title">Ebook gratuit 6</div><div class="ebook-price free">Gratuit</div></div>
+            </div>
+            <div class="ebook-card" data-type="free">
+              <span class="ebook-tag free">Gratuit</span>
+              <img src="img/sp.png" alt="">
+              <div class="ebook-card-body"><div class="ebook-card-title">Ebook gratuit 7</div><div class="ebook-price free">Gratuit</div></div>
+            </div>
+          </div>
+        </div>
+
+        <a class="shop-cta" href="https://zoumcosmo.systeme.io/ebook">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          Voir tous les e-books
+        </a>
+      </div>
+
+      <div class="shop-section-divider"></div>
+
+      <div style="animation:fadeUp .4s .12s both">
+        <div class="shop-section-head">
+          <div class="shop-section-icon physical">
+            <svg fill="none" viewBox="0 0 24 24" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+          </div>
+          <div class="shop-section-info">
+            <div class="shop-section-title">Produits physiques</div>
+            <div class="shop-section-sub">Les produits cosméceutiques</div>
+          </div>
+        </div>
+        <div class="shop-scroll-wrapper">
+          <div class="scroll-row">
+            <a class="shop-card" href="https://biocosmeceutiques.com/produit/savon_menthe-poivree/">
+              <span class="shop-card-tag">Nouveau</span>
+              <img src="https://ugc.production.linktr.ee/42cda071-04c5-4401-b8cb-3fb2bee8db97_image.png?io=true&size=thumbnail-grid-carousel-v1_" alt="">
+              <div class="shop-card-body"><div class="shop-card-title">Savon Menthe Poivrée</div><div class="shop-card-price">12 $</div></div>
+            </a>
+            <a class="shop-card" href="lien">
+              <img src="https://ugc.production.linktr.ee/8ffb12b1-9010-4767-947e-5b07cfd282d9_image.png?io=true&size=thumbnail-grid-carousel-v1_1" alt="">
+              <div class="shop-card-body"><div class="shop-card-title">Produit 2</div><div class="shop-card-price">40 $</div></div>
+            </a>
+            <a class="shop-card" href="lien">
+              <img src="https://ugc.production.linktr.ee/8b7938d1-d39b-4c98-90c7-c368c3c93df9_IMG-9793.jpeg?io=true&size=thumbnail-grid-carousel-v1_1" alt="">
+              <div class="shop-card-body"><div class="shop-card-title">Produit 3</div><div class="shop-card-price">18 $</div></div>
+            </a>
+          </div>
+        </div>
+        <a class="shop-cta" href="https://biocosmeceutiques.com/">
+          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          Visiter la boutique
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>Réalisé par</span>
+    <a href="mailto:midogiova@gmail.com?subject=Quels%20sont%20les%20services%20que%20vous%20proposez">Giovanny Gandonou</a>
+  </div>
+</div>
+
+<!-- POPUP CONTE ENFANT -->
+<div class="popup-overlay" id="popup-conte">
+  <div class="popup-box">
+    <button class="popup-close" onclick="fermerPopup('conte')">✕</button>
+    <span class="popup-emoji">📖</span>
+    <div class="popup-titre">Attends, ne pars pas<br><span>les mains vides.</span></div>
+    <div class="popup-badge">📖 Conte pour enfant — Guide gratuit</div>
+    <p class="popup-sous">Reçois <strong style="color:var(--charcoal)">le guide gratuit</strong> directement dans ta boîte mail.</p>
+    <form method="post" action="https://systeme.io/embedded/39125526/subscription" class="popup-form">
+      <input type="text" name="first_name" placeholder="Ton prénom" required>
+      <input type="email" name="email" placeholder="ton@email.com" required>
+      <button type="submit">✉️ Recevoir le guide gratuit</button>
+    </form>
+    <p class="popup-note">Pas de spam · Désabonnement en 1 clic</p>
+  </div>
+</div>
+
+<button id="backToTop" class="back-to-top" title="Retour en haut">
+  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/>
+  </svg>
+</button>
+
+<script>
+  document.querySelectorAll('.shop-card img, .ebook-card img').forEach(img => {
+    img.addEventListener('error', () => {
+      const card = img.closest('.shop-card,.ebook-card');
+      if (card) card.style.display = 'none';
+    });
+  });
+
+  document.querySelectorAll('#ebook-row .ebook-card').forEach(c => c.style.display = '');
+
+  function showTab(tab, btn) {
+    ['profil','services','shop'].forEach(t => {
+      document.getElementById('tab-' + t).style.display = t === tab ? 'flex' : 'none';
+    });
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    if (tab === 'shop') {
+      document.querySelectorAll('#ebook-row .ebook-card').forEach(c => c.style.display = '');
+      document.querySelectorAll('.ebook-filter-btn').forEach(b => b.classList.remove('active-all','active-free','active-paid'));
+      const allBtn = document.querySelector('.ebook-filter-btn');
+      if (allBtn) allBtn.classList.add('active-all');
+      const row = document.getElementById('ebook-row');
+      if (row) row.scrollLeft = 0;
+    }
+  }
+
+  function toggleAccordion(header) {
+    const block = header.parentElement;
+    block.classList.toggle('active');
+  }
+  function filterEbooks(type, btn) {
+    document.querySelectorAll('#ebook-row .ebook-card').forEach(card => {
+      card.style.display = (type === 'all' || card.dataset.type === type) ? '' : 'none';
+    });
+    document.querySelectorAll('.ebook-filter-btn').forEach(b => {
+      b.classList.remove('active-all','active-free','active-paid');
+    });
+    btn.classList.add(type === 'all' ? 'active-all' : type === 'free' ? 'active-free' : 'active-paid');
+    const row = document.getElementById('ebook-row');
+    if (row) row.scrollLeft = 0;
+  }
+
+  function lancerPopup(nom) {
+    document.getElementById('popup-' + nom).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function fermerPopup(nom) {
+    document.getElementById('popup-' + nom).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('click', e => {
+    if (e.target.classList.contains('popup-overlay')) {
+      e.target.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Gestion du bouton Retour en haut
+  const backToTopBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<script id="form-script-tag-23257437" src="https://zoumcosmo.systeme.io/public/remote/page/391188275683fbef4393ce74b3"></script>
+</body>
+</html>

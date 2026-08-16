@@ -1,0 +1,22 @@
+{
+  "name": "lynette-zoumenou",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Lien bio + pages d'accompagnement pour Lynette Zoumenou, avec panneau d'administration",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "echo 'No build step required'"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.112.3",
+    "busboy": "^1.6.0",
+    "dotenv": "^17.4.2",
+    "express": "^4.19.2",
+    "multer": "^2.2.0"
+  },
+  "devDependencies": {
+    "vercel": "^59.1.3"
+  }
+}

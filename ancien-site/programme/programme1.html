@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reprendre sa place — Lynette Zoumenou</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ivory:#f7f3ec;--cream:#ede8de;--warm:#faf8f4;
+  --gold:#b8914d;--gold-l:#d4ae70;--gold-p:#f0e0c0;--gold-d:#8a6930;
+  --dark:#1c1a17;--mid:#2e2b26;--muted:#6e6459;--lite:#9e9387;
+  --border:rgba(184,145,77,.18);--border-h:rgba(184,145,77,.42);
+  --sf:rgba(255,255,255,.72);--div:rgba(184,145,77,.14);
+  --rose:rgba(210,140,140,.18);--rose-b:rgba(210,140,140,.32);--rose-t:#8a3a3a;
+  --sh-sm:0 2px 12px rgba(30,24,14,.07);
+  --sh-md:0 8px 32px rgba(30,24,14,.10);
+  --sh-lg:0 24px 64px rgba(30,24,14,.14);
+  --r:12px;--rm:18px;--rl:26px;--rx:32px;
+  --tr:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--ivory);color:var(--dark);min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:28px 16px 72px;position:relative;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 60% 50% at 8% 5%,rgba(212,174,112,.13) 0%,transparent 55%),radial-gradient(ellipse 50% 60% at 94% 88%,rgba(184,145,77,.11) 0%,transparent 55%);pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;inset:0;background-image:radial-gradient(circle,rgba(184,145,77,.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;z-index:0}
+
+.page{position:relative;z-index:1;width:100%;max-width:600px;display:flex;flex-direction:column;animation:cardIn .6s cubic-bezier(.22,1,.36,1) both}
+@keyframes cardIn{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:none}}
+
+/* ── Retour ── */
+.back{display:inline-flex;align-items:center;gap:7px;color:var(--lite);font-size:.75rem;font-weight:600;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;transition:color var(--tr)}
+.back:hover{color:var(--gold)}
+.back svg{width:14px;height:14px}
+
+/* ══ HERO ══ */
+.hero{background:var(--warm);border-radius:var(--rx);border:1px solid var(--border);overflow:hidden;box-shadow:var(--sh-lg);margin-bottom:14px}
+.hero-accent{height:3px;background:linear-gradient(90deg,transparent 0%,var(--gold-d) 20%,var(--gold) 50%,var(--gold-l) 70%,transparent 100%)}
+.hero-body{padding:36px 28px 32px;text-align:center}
+
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(184,145,77,.1);border:1px solid var(--border);color:var(--gold-d);font-size:.63rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:20px}
+.hero-badge span{width:5px;height:5px;background:var(--gold);border-radius:50%;display:inline-block}
+
+.hero-title{font-family:'Playfair Display',serif;font-size:2.4rem;font-weight:700;color:var(--dark);line-height:1.15;letter-spacing:-0.03em}
+.hero-title em{color:var(--gold);font-style:italic;font-weight:400}
+.hero-price{font-family:'Outfit',sans-serif;font-size:2.8rem;font-weight:800;color:var(--gold);margin:12px 0 8px;line-height:1}
+.hero-ornament{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0}
+.hero-line{width:36px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.hero-line.r{background:linear-gradient(90deg,var(--gold),transparent)}
+.hero-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
+
+.hero-sub{font-size:0.95rem;color:var(--muted);line-height:1.75;font-weight:400;max-width:440px;margin:0 auto}
+
+/* Citation intro */
+.hero-quote{margin:20px 0 0;background:linear-gradient(135deg,rgba(184,145,77,.08),rgba(184,145,77,.03));border-left:3px solid var(--gold);border-radius:0 var(--r) var(--r) 0;padding:14px 18px;text-align:left}
+.hero-quote p{font-family:'Playfair Display',serif;font-size:.92rem;font-style:italic;color:var(--muted);line-height:1.7}
+
+/* ── CTA ── */
+.cta-main{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:22px;padding:15px 28px;background:linear-gradient(135deg,var(--gold-d),var(--gold));color:#fff;font-family:'Outfit',sans-serif;font-size:.88rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;border-radius:50px;text-decoration:none;border:none;cursor:pointer;transition:opacity var(--tr),transform var(--tr),box-shadow var(--tr);box-shadow:0 6px 20px rgba(184,145,77,.38);width:100%}
+.cta-main:hover{opacity:.92;transform:translateY(-2px);box-shadow:0 10px 28px rgba(184,145,77,.45)}
+.cta-main svg{width:16px;height:16px;flex-shrink:0}
+.cta-note{font-size:.72rem;color:var(--lite);margin-top:9px;text-align:center}
+
+/* ══ SECTIONS ══ */
+.section{background:var(--sf);border:1px solid var(--border);border-radius:var(--rm);overflow:hidden;margin-bottom:12px;box-shadow:var(--sh-sm);backdrop-filter:blur(8px);animation:fadeUp .4s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 20px;background:linear-gradient(90deg,rgba(184,145,77,.07),transparent);border-bottom:1px solid var(--div)}
+.sec-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--gold-d),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(184,145,77,.28)}
+.sec-icon svg{width:16px;height:16px}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--dark)}
+.sec-body{padding:18px 20px;display:flex;flex-direction:column;gap:12px}
+
+.intro-text{font-size:.875rem;color:var(--muted);line-height:1.78;font-weight:400}
+.intro-text strong{color:var(--dark);font-weight:600}
+
+/* Listes */
+.check-list{display:flex;flex-direction:column;gap:9px;list-style:none}
+.check-list li{display:flex;align-items:flex-start;gap:11px;font-size:.855rem;color:var(--dark);line-height:1.55}
+.check-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.check-icon.gold{background:rgba(184,145,77,.14);border:1px solid rgba(184,145,77,.3)}
+.check-icon.soft{background:rgba(160,110,180,.12);border:1px solid rgba(160,110,180,.28)}
+.check-icon.green{background:rgba(58,170,92,.12);border:1px solid rgba(58,170,92,.28)}
+.check-icon.blue{background:rgba(60,130,200,.1);border:1px solid rgba(60,130,200,.25)}
+.check-icon svg{width:10px;height:10px}
+.check-icon.gold svg{color:var(--gold-d)}
+.check-icon.soft svg{color:#7a4a9a}
+.check-icon.green svg{color:#2d8a4a}
+.check-icon.blue svg{color:#2a5a9a}
+
+/* Tags thèmes */
+.tags-wrap{display:flex;flex-wrap:wrap;gap:8px}
+.tag{display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border-radius:50px;font-size:.74rem;font-weight:600;letter-spacing:.04em;border:1px solid var(--border);background:rgba(184,145,77,.07);color:var(--gold-d);transition:background var(--tr),border-color var(--tr)}
+.tag:hover{background:rgba(184,145,77,.14);border-color:var(--border-h)}
+
+/* Format stats */
+.format-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.format-box{background:rgba(184,145,77,.06);border:1px solid var(--border);border-radius:var(--r);padding:14px 16px;text-align:center}
+.format-val{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--gold);line-height:1}
+.format-lbl{font-size:.65rem;color:var(--lite);margin-top:5px;text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+
+/* Inclus bloc */
+.inclus-row{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(184,145,77,.05);border:1px solid var(--border);border-radius:var(--r);font-size:.83rem;color:var(--dark);font-weight:500}
+.inclus-row span{font-size:1.1rem}
+
+/* Pour qui bloc */
+.pour-qui{background:linear-gradient(135deg,rgba(184,145,77,.08),rgba(184,145,77,.03));border:1px solid var(--border-h);border-radius:var(--r);padding:16px 18px}
+.pour-qui-title{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lite);margin-bottom:10px}
+
+/* Intention - fond sobre */
+.intention-card{background:var(--dark);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:10px}
+.intention-label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.intention-items{display:flex;flex-direction:column;gap:8px}
+.intention-item{display:flex;align-items:center;gap:10px;font-size:.84rem;color:rgba(255,255,255,.82);font-weight:400}
+.intention-dot{width:6px;height:6px;border-radius:50%;background:var(--gold-l);flex-shrink:0}
+
+/* Clôture */
+.cloture{background:linear-gradient(135deg,rgba(184,145,77,.09),rgba(184,145,77,.03));border:1px solid var(--border-h);border-radius:var(--rm);padding:28px 24px;text-align:center;margin-bottom:12px;animation:fadeUp .4s .28s both}
+.cloture-quote{font-family:'Playfair Display',serif;font-size:1.08rem;font-weight:400;font-style:italic;color:var(--dark);line-height:1.72;max-width:440px;margin:0 auto}
+.cloture-quote em{color:var(--gold);font-weight:700}
+
+/* Footer */
+.footer{display:flex;justify-content:center;align-items:center;margin-top:18px;font-size:.7rem;color:var(--lite);gap:5px}
+.footer a{color:var(--gold);text-decoration:none;font-weight:600;transition:opacity var(--tr)}
+.footer a:hover{opacity:.7}
+
+@media(max-width:480px){
+  body{padding:16px 12px 60px}
+  .hero-body{padding:28px 18px 26px}
+  .hero-title{font-size:1.65rem}
+  .sec-body{padding:14px 16px}
+  .format-grid{grid-template-columns:1fr 1fr}
+}
+.hero-container{position:relative;width:100%;height:240px;overflow:hidden}
+.hero-img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-mask{position:absolute;inset:0;background:linear-gradient(to bottom, transparent 60%, var(--warm) 100%)}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Retour -->
+  <a href="../index.html" class="back">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+    Retour
+  </a>
+
+  <!-- ══ HERO ══ -->
+  <div class="hero">
+    <div class="hero-accent"></div>
+    <div class="hero-container">
+      <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&q=80&w=600&h=400" alt="" class="hero-img">
+      <div class="hero-mask"></div>
+    </div>
+    <div class="hero-body">
+
+      <div class="hero-badge">
+        <span></span>Accompagnement de groupe<span></span>
+      </div>
+      <div class="hero-title">« <em>Reprendre</em> sa place »</div>
+      <div class="hero-price">65 $</div>
+      <div class="hero-ornament">
+        <div class="hero-line"></div>
+        <div class="hero-diamond"></div>
+        <div class="hero-line r"></div>
+      </div>
+
+      <div class="hero-sub">Un espace doux et transformateur pour les femmes qui veulent se retrouver, se reconstruire et avancer autrement.</div>
+
+      <a class="cta-main" href="https://wa.me/" target="_blank">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        Réserver mon accompagnement
+      </a>
+      <div class="cta-note">Échanges privés et confidentiels</div>
+      <div class="hero-quote">
+        <p>De nombreuses femmes cheminent avec abnégation, portant avec dignité le poids de multiples responsabilités. Ce programme est une invitation à honorer votre propre existence et à restaurer votre équilibre intérieur.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ CE QUE CE PROGRAMME OFFRE ══ -->
+  <div class="section" style="animation-delay:.06s">
+    <div class="sec-head">
+      <div class="sec-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
+          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+        </svg>
+      </div>
+      <span class="sec-title">Ce que ce programme t'offre</span>
+    </div>
+    <div class="sec-body">
+      <p class="intro-text">Un espace sécurisant, humain et profondément bienveillant pour te permettre de :</p>
+      <ul class="check-list">
+        <li><div class="check-icon soft"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Te reconnecter à toi-même</li>
+        <li><div class="check-icon soft"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Retrouver ta confiance</li>
+        <li><div class="check-icon soft"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Reprendre ton pouvoir intérieur</li>
+        <li><div class="check-icon soft"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Avancer avec plus de clarté et de paix</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══ CE QUE TU VAS VIVRE ══ -->
+  <div class="section" style="animation-delay:.10s">
+    <div class="sec-head">
+      <div class="sec-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+      </div>
+      <span class="sec-title">Ce que tu vas vivre</span>
+    </div>
+    <div class="sec-body">
+      <p class="intro-text">Durant ce parcours, tu seras accompagnée à travers :</p>
+      <ul class="check-list">
+        <li><div class="check-icon gold"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Des échanges profonds et authentiques</li>
+        <li><div class="check-icon gold"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Des exercices de réflexion personnelle</li>
+        <li><div class="check-icon gold"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Des moments de prise de conscience</li>
+        <li><div class="check-icon gold"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Des instants d'écoute et de partage</li>
+        <li><div class="check-icon gold"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Des outils simples pour retrouver l'équilibre émotionnel</li>
+        <li><div class="check-icon gold"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Un espace sans jugement ni pression</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══ THÈMES ABORDÉS ══ -->
+  <div class="section" style="animation-delay:.14s">
+    <div class="sec-head">
+      <div class="sec-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+        </svg>
+      </div>
+      <span class="sec-title">Quelques thèmes abordés</span>
+    </div>
+    <div class="sec-body">
+      <div class="tags-wrap">
+        <span class="tag">🌱 Retrouver son identité</span>
+        <span class="tag">💛 Se choisir sans culpabilité</span>
+        <span class="tag">🌊 Sortir de l'épuisement émotionnel</span>
+        <span class="tag">✨ Reprendre confiance en soi</span>
+        <span class="tag">🔓 Comprendre ses blocages</span>
+        <span class="tag">💎 Se reconnecter à sa valeur</span>
+        <span class="tag">🕊️ Avancer à son rythme</span>
+        <span class="tag">🌸 Créer une vie plus alignée</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ FORMAT ══ -->
+  <div class="section" style="animation-delay:.18s">
+    <div class="sec-head">
+      <div class="sec-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
+          <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+      </div>
+      <span class="sec-title">Format du programme</span>
+    </div>
+    <div class="sec-body">
+      <div class="format-grid">
+        <div class="format-box">
+          <div class="format-val">6</div>
+          <div class="format-lbl">Semaines</div>
+        </div>
+        <div class="format-box">
+          <div class="format-val">1/sem.</div>
+          <div class="format-lbl">Rencontre de groupe</div>
+        </div>
+      </div>
+
+      <p class="intro-text" style="margin-top:4px">Rencontres en <strong>Zoom ou en présentiel</strong>, selon les participantes.</p>
+
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:4px">
+        <div class="inclus-row"><span>🤝</span> Accompagnement de groupe bienveillant</div>
+        <div class="inclus-row"><span>📓</span> Exercices de réflexion & fiches de travail</div>
+        <div class="inclus-row"><span>📔</span> Journal de bord personnel</div>
+        <div class="inclus-row"><span>💬</span> Espace d'échange privé (WhatsApp ou Messenger)</div>
+        <div class="inclus-row"><span>🌿</span> Soutien bienveillant tout au long du parcours</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ POUR QUI ══ -->
+  <div class="section" style="animation-delay:.22s">
+    <div class="sec-head">
+      <div class="sec-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+      </div>
+      <span class="sec-title">Ce programme est fait pour toi si…</span>
+    </div>
+    <div class="sec-body">
+      <div class="pour-qui">
+        <div class="pour-qui-title">Tu te reconnais dans l'une de ces situations :</div>
+        <ul class="check-list">
+          <li><div class="check-icon green"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Tu traverses une période de transition dans ta vie</li>
+          <li><div class="check-icon green"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Tu te sens perdue ou émotionnellement épuisée</li>
+          <li><div class="check-icon green"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Tu veux retrouver ta lumière intérieure</li>
+          <li><div class="check-icon green"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Tu as besoin d'un espace humain, vrai et sans masques</li>
+          <li><div class="check-icon green"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Tu veux évoluer en douceur, sans pression</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ L'INTENTION ══ -->
+  <div class="section" style="animation-delay:.26s">
+    <div class="sec-head">
+      <div class="sec-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+        </svg>
+      </div>
+      <span class="sec-title">L'intention de ce programme</span>
+    </div>
+    <div class="sec-body">
+      <p class="intro-text">Ce n'est pas un espace de performance. Ce n'est pas un endroit où il faut « être forte ».</p>
+      <div class="intention-card">
+        <div class="intention-label">C'est un espace pour…</div>
+        <div class="intention-items">
+          <div class="intention-item"><div class="intention-dot"></div>Déposer ce qui pèse, sans retenue</div>
+          <div class="intention-item"><div class="intention-dot"></div>Se reconnecter à soi en toute douceur</div>
+          <div class="intention-item"><div class="intention-dot"></div>Reprendre confiance pas à pas</div>
+          <div class="intention-item"><div class="intention-dot"></div>Avancer avec plus de sérénité</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PHRASE DE CLÔTURE ══ -->
+  <div class="cloture">
+    <div style="font-size:1.6rem;margin-bottom:14px">🌸</div>
+    <p class="cloture-quote">
+      Parce qu'il arrive un moment dans la vie où une femme ne veut plus seulement survivre…<br>
+      <em>elle veut enfin reprendre sa place.</em>
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>Réalisé par</span>
+    <a href="mailto:midogiova@gmail.com">Giovanny Gandonou</a>
+  </div>
+
+</div>
+</body>
+</html>

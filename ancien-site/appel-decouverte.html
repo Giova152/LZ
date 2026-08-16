@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Appel découverte — Lynette Zoumenou</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ivory:#f7f3ec;--cream:#ede8de;--warm:#faf8f4;
+  --gold:#b8914d;--gold-l:#d4ae70;--gold-p:#f0e0c0;--gold-d:#8a6930;
+  --dark:#1c1a17;--mid:#2e2b26;--muted:#6e6459;--lite:#9e9387;
+  --border:rgba(184,145,77,.18);--border-h:rgba(184,145,77,.42);
+  --sf:rgba(255,255,255,.72);--div:rgba(184,145,77,.14);
+  --sh-sm:0 2px 12px rgba(30,24,14,.07);
+  --sh-md:0 8px 32px rgba(30,24,14,.10);
+  --sh-lg:0 24px 64px rgba(30,24,14,.14);
+  --r:12px;--rm:18px;--rl:26px;--rx:32px;
+  --tr:.22s cubic-bezier(.4,0,.2,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--ivory);color:var(--dark);min-height:100vh;display:flex;justify-content:center;align-items:flex-start;padding:28px 16px 72px;position:relative;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 60% 50% at 8% 5%,rgba(212,174,112,.13) 0%,transparent 55%),radial-gradient(ellipse 50% 60% at 94% 88%,rgba(184,145,77,.11) 0%,transparent 55%);pointer-events:none;z-index:0}
+body::after{content:'';position:fixed;inset:0;background-image:radial-gradient(circle,rgba(184,145,77,.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;z-index:0}
+
+.page{position:relative;z-index:1;width:100%;max-width:600px;display:flex;flex-direction:column;animation:cardIn .6s cubic-bezier(.22,1,.36,1) both}
+@keyframes cardIn{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:none}}
+
+/* ── Retour ── */
+.back{display:inline-flex;align-items:center;gap:7px;color:var(--lite);font-size:.75rem;font-weight:600;text-decoration:none;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px;transition:color var(--tr)}
+.back:hover{color:var(--gold)}
+.back svg{width:14px;height:14px}
+
+/* ══ HERO ══ */
+.hero{background:var(--warm);border-radius:var(--rx);border:1px solid var(--border);overflow:hidden;box-shadow:var(--sh-lg);margin-bottom:14px}
+.hero-accent{height:3px;background:linear-gradient(90deg,transparent 0%,var(--gold-d) 20%,var(--gold) 50%,var(--gold-l) 70%,transparent 100%)}
+.hero-body{padding:36px 28px 32px;text-align:center}
+
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(184,145,77,.1);border:1px solid var(--border);color:var(--gold-d);font-size:.63rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:20px}
+.hero-badge span{width:5px;height:5px;background:var(--gold);border-radius:50%;display:inline-block}
+
+.hero-title{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:var(--dark);line-height:1.2}
+.hero-title em{color:var(--gold);font-style:italic;font-weight:400}
+.hero-ornament{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px 0}
+.hero-line{width:36px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.hero-line.r{background:linear-gradient(90deg,var(--gold),transparent)}
+.hero-diamond{width:6px;height:6px;background:var(--gold);transform:rotate(45deg)}
+
+.hero-sub{font-size:.87rem;color:var(--muted);line-height:1.68;font-weight:400;max-width:440px;margin:0 auto}
+
+/* ── CTA ── */
+.cta-main{display:flex;align-items:center;justify-content:center;gap:9px;margin-top:22px;padding:15px 28px;background:linear-gradient(135deg,var(--gold-d),var(--gold));color:#fff;font-family:'Outfit',sans-serif;font-size:.88rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;border-radius:50px;text-decoration:none;border:none;cursor:pointer;transition:opacity var(--tr),transform var(--tr),box-shadow var(--tr);box-shadow:0 6px 20px rgba(184,145,77,.38);width:100%}
+.cta-main:hover{opacity:.92;transform:translateY(-2px);box-shadow:0 10px 28px rgba(184,145,77,.45)}
+.cta-main svg{width:16px;height:16px;flex-shrink:0}
+.cta-note{font-size:.72rem;color:var(--lite);margin-top:9px;text-align:center}
+
+/* ══ SECTIONS ══ */
+.section{background:var(--sf);border:1px solid var(--border);border-radius:var(--rm);overflow:hidden;margin-bottom:12px;box-shadow:var(--sh-sm);backdrop-filter:blur(8px);animation:fadeUp .4s both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.sec-head{display:flex;align-items:center;gap:12px;padding:14px 20px;background:linear-gradient(90deg,rgba(184,145,77,.07),transparent);border-bottom:1px solid var(--div)}
+.sec-icon{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--gold-d),var(--gold));display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 3px 10px rgba(184,145,77,.28)}
+.sec-icon svg{width:16px;height:16px}
+.sec-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--dark)}
+.sec-body{padding:18px 20px;display:flex;flex-direction:column;gap:12px}
+
+/* Listes */
+.check-list{display:flex;flex-direction:column;gap:9px;list-style:none}
+.check-list li{display:flex;align-items:flex-start;gap:11px;font-size:.855rem;color:var(--dark);line-height:1.55}
+.check-icon{flex-shrink:0;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.check-icon.gold{background:rgba(184,145,77,.14);border:1px solid rgba(184,145,77,.3)}
+.check-icon.gold svg{color:var(--gold-d)}
+.check-icon svg{width:10px;height:10px}
+
+/* Footer */
+.footer{display:flex;justify-content:center;align-items:center;margin-top:18px;font-size:.7rem;color:var(--lite);gap:5px}
+.footer a{color:var(--gold);text-decoration:none;font-weight:600;transition:opacity var(--tr)}
+.footer a:hover{opacity:.7}
+
+@media(max-width:480px){
+  body{padding:16px 12px 60px}
+  .hero-body{padding:28px 18px 26px}
+  .hero-title{font-size:1.55rem}
+  .sec-body{padding:14px 16px}
+}
+.hero-img{width:100%;height:180px;object-fit:cover;display:block;border-bottom:1px solid var(--border)}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Retour -->
+  <a href="index.html" class="back">
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+    Retour
+  </a>
+
+  <!-- ══ HERO ══ -->
+  <div class="hero">
+    <div class="hero-accent"></div>
+    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=600&h=300" alt="Espace d'écoute et de découverte" class="hero-img">
+    <div class="hero-body">
+
+      <div class="hero-badge">
+        <span></span>Accompagnement<span></span>
+      </div>
+      <div class="hero-title">🌿 Appel découverte <em>(30 min)</em></div>
+      <div class="hero-ornament">
+        <div class="hero-line"></div>
+        <div class="hero-diamond"></div>
+        <div class="hero-line r"></div>
+      </div>
+
+      <div class="hero-sub">Cet appel est un échange gratuit et sans engagement pour faire le point sur ta situation actuelle. C’est un moment pour parler de ce que tu vis, clarifier tes besoins et identifier ce qui peut t’aider à avancer avec plus de clarté et de sérénité.</div>
+
+      <a class="cta-main" href="https://calendly.com/zoumlegacy/30min" target="_blank">
+        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        Réserver mon créneau sur Calendly
+      </a>
+      <div class="cta-note">Échange confidentiel · Sans engagement</div>
+    </div>
+  </div>
+
+  <!-- ══ ENSEMBLE NOUS ALLONS ══ -->
+  <div class="section" style="animation-delay:.06s">
+    <div class="sec-head">
+      <div class="sec-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+        </svg>
+      </div>
+      <span class="sec-title">✨ Ensemble, nous allons :</span>
+    </div>
+    <div class="sec-body">
+      <ul class="check-list">
+        <li><div class="check-icon gold"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Comprendre ta situation actuelle</li>
+        <li><div class="check-icon gold"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Identifier tes blocages et tes besoins</li>
+        <li><div class="check-icon gold"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Voir si un accompagnement avec moi est adapté pour toi</li>
+        <li><div class="check-icon gold"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>Définir une prochaine étape claire</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══ NOTE ══ -->
+  <div class="section" style="animation-delay:.12s">
+    <div class="sec-head">
+      <div class="sec-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        </svg>
+      </div>
+      <span class="sec-title">À savoir</span>
+    </div>
+    <div class="sec-body">
+      <p style="font-size:.875rem;color:var(--muted);line-height:1.7;font-style:italic">
+        💬 Cet appel n’est pas une séance de rencontre en douceur, mais un premier pas pour t’orienter et t’aider à y voir plus clair.
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span>Réalisé par</span>
+    <a href="mailto:midogiova@gmail.com">Giovanny Gandonou</a>
+  </div>
+
+</div>
+</body>
+</html>

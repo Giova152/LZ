@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="640" viewBox="0 0 480 640">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F6F0E4"/>
+      <stop offset="1" stop-color="#E9DEC6"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="640" fill="url(#bg)"/>
+  <circle cx="432" cy="89.60000000000001" r="172.79999999999998" fill="#FFFFFF" opacity=".42"/>
+  <circle cx="38.4" cy="588.8000000000001" r="134.4" fill="#8A6D3B" opacity=".12"/>
+  <circle cx="278.4" cy="38.4" r="62.400000000000006" fill="#FFFFFF" opacity=".28"/>
+  <rect x="24" y="24" width="432" height="592" rx="72" fill="none" stroke="#8A6D3B" stroke-opacity=".16"/>
+  <text x="240" y="300.79999999999995" font-family="Noto Color Emoji, Apple Color Emoji, Segoe UI Emoji, sans-serif" font-size="202" text-anchor="middle" dominant-baseline="central">📒</text>
+</svg>
